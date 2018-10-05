@@ -75,14 +75,11 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
-        
-        
     }
     
     
     func checkAnswer() {
         
-       
             let correctAnswer = allQuestions.list[questionNumber].answer
             
             if correctAnswer == pickAnswer {
@@ -91,13 +88,12 @@ class ViewController: UIViewController {
             else {
                 print("WRONG")
             }
-        
-       
     }
     
     
     func startOver() {
-       
+        questionNumber = 0
+        nextQuestion()
     }
     
 
