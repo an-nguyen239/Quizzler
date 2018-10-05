@@ -45,7 +45,9 @@ class ViewController: UIViewController {
         checkAnswer()
         
         questionNumber = questionNumber + 1
-        questionLabel.text = allQuestions.list[questionNumber].questionText 
+        
+        nextQuestion()
+        
         
     }
     
@@ -57,20 +59,40 @@ class ViewController: UIViewController {
 
     func nextQuestion() {
         
+        if questionNumber <= 12{
+            questionLabel.text = allQuestions.list[questionNumber].questionText
+        }
+        else {
+            
+            let alert = UIAlertController(title: "Great", message: "You've finished all the questions, would you like to start over", preferredStyle: .alert)
+            
+            let restartAction = UIAlertAction(title: "restart", style: .default) { (UIAlertAction) in
+                self.startOver()
+            }
+            
+            alert.addAction(restartAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
         
         
     }
     
     
     func checkAnswer() {
-        let correctAnswer = allQuestions.list[0].answer
         
-        if correctAnswer == pickAnswer {
-            print("You got it!")
-        }
-        else {
-            print("WRONG")
-        }
+       
+            let correctAnswer = allQuestions.list[questionNumber].answer
+            
+            if correctAnswer == pickAnswer {
+                print("You got it!")
+            }
+            else {
+                print("WRONG")
+            }
+        
+       
     }
     
     
