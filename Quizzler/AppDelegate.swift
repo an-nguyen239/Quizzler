@@ -1,9 +1,8 @@
-//
-//  AppDelegate.swift
+//  QuestionBank.swift
 //  Quizzler
 //
-//  Created by Angela Yu on 25/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
+//  Created by An Nguyen on 10/4/18.
+//  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 import UIKit
